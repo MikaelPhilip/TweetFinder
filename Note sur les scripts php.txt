@@ -1,0 +1,5 @@
+Il y a deux scripts geoTweet:
+
+Un avec le proxy serveur si l'on est sur une machine de l'iut de Nantes.
+
+Un avec sans proxy si l'on est en dehors de l'iut de Nantes.

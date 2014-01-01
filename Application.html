@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+        <title>Tweet finder</title>
+		<!--Deux feuilles de styles différents suivant la taille de l'ecran prévus (on en garde que une au final l'autre étant non-fait)-->
+		<link rel="stylesheet" href="Application.css">
+		<!--link rel="stylesheet" href="ApplicationSmall.css" media="screen and (max-width: 599px)"-->
+		<!--Script pour obtenir OpenLayers-->
+		<script src="openlayers/lib/OpenLayers.js"></script>
+		<script src="Application.js"></script>
+		
+    </head>
+    <body onload= "init()">
+		<!--Header contient un formulaire de recherche et de changement de langue-->
+		<header>
+			<input class="champ" id="hashtag" type="text" name="hashtag" placeholder="#hashtag" size="20" required> 
+			<input class="boutons" type="submit" value="Rafraichir" onclick="newRecherche()">
+			<select class="champ" name="langue" size="1">
+				<Option>Français
+				<Option>Anglais
+			</select>
+		</header>
+		<!--Partie centrale: contient la map et la liste de tweet-->
+		<div>	
+			<!--map-->
+			<div id="map"></div>
+			<div id="listeTweets">
+			<h2>Tweets retrouvés</h2>
+			<ul id="tweets">
+				<li>
+                <img id="profile" src="img/question.jpg">
+                <h3 id="auteur"><b>Pas de tweets trouvé:</b></h3>
+                <p id="contenu">Veuillez effectuer une recherche ou changer le hashtag que vous avez indiqué dans votre recherche</p>
+                </li>
+			</ul>
+            <input id="btnNext" class="boutons" type="submit" value="Resultats suivants" onclick="recherche()">
+			</div>
+		</div>
+		<!--le footer contient un formulaire de check-box pour gerer les paramêtres-->
+		<footer>
+			<form action="Application.js" method="post" >
+				<input type="checkbox" name="option" value="LierTweet">Lier les tweets
+				<input type="checkbox" name="option" value="GrossirTweet">Grossir les tweets selon leurs importances
+				<h6>Réalisé par Philip Mikaël LP SIL 2013/2014</h6>
+			</form>
+		</footer>
+	</body>
+</html>
